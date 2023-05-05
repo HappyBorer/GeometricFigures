@@ -1,6 +1,6 @@
 package figures;
 
-public class Circle extends Figure{
+public class Circle extends Figure implements FigureCalculations{
     private double radius;
     private double diameter;
 
@@ -42,7 +42,7 @@ public class Circle extends Figure{
         return Math.PI * Math.pow(radius, 2);
     }
 
-    public double calculateTheLength(){
+    public double calculatePerimeter(){
         return 2 * Math.PI * radius;
     }
 }

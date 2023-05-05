@@ -1,6 +1,6 @@
 package figures;
 
-public class Pentagon extends Figure{
+public class Pentagon extends Figure implements FigureCalculations{
     private static final double ANGLES = 540;
     private static final double ANGLE = 108;
     private double side;
@@ -35,11 +35,11 @@ public class Pentagon extends Figure{
         System.out.printf("angel: %f, side: %f", ANGLE, side);
     }
 
-    public double calculateAreaPentagon(){
+    public double calculateTheArea(){
         return (Math.pow(side, 2) * Math.sqrt(25 + 10 * Math.sqrt(5))) / 4;
     }
 
-    public double calculatePerimeterPentagon(){
+    public double calculatePerimeter(){
         return side * 5;
     }
 }

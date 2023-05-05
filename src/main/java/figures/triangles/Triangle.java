@@ -1,8 +1,9 @@
 package figures.triangles;
 
 import figures.Figure;
+import figures.FigureCalculations;
 
-public class Triangle extends Figure {
+public class Triangle extends Figure implements FigureCalculations {
     private static final double SUMofANGELS = 180;
     private double angleOne;
     private double angleTwo;
@@ -79,5 +80,14 @@ public class Triangle extends Figure {
         super.description();
         System.out.printf("angle one: %f, angle two: %f, angle three: %f, side one: %f, side two: %f, side three: %f",
                 angleOne, angleTwo, angleThree, sideOne, sideTwo, sideThree);
+    }
+
+    public double calculateTheArea(){
+        double p = (sideOne + sideTwo + sideThree) / 2;
+        return Math.sqrt(p * (p - sideOne) * (p - sideTwo) * (p - sideThree));
+    }
+
+    public double calculatePerimeter(){
+        return sideOne + sideTwo + sideThree;
     }
 }

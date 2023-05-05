@@ -1,6 +1,6 @@
 package figures;
 
-public class Hexagon extends Figure {
+public class Hexagon extends Figure implements FigureCalculations{
     private static final double ANGLES = 720;
     private final double ANGLE = 120;
     private double side;
@@ -37,11 +37,11 @@ public class Hexagon extends Figure {
         return ANGLE;
     }
 
-    public double calculateAreaHexagon(){
+    public double calculateTheArea(){
         return (3 * Math.sqrt(3) / 2) * Math.pow(side, 2);
     }
 
-    public double calculateLengthHexagon(){
+    public double calculatePerimeter(){
         return 6 * side;
     }
 

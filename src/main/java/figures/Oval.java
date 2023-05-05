@@ -1,6 +1,6 @@
 package figures;
 
-public class Oval extends Figure{
+public class Oval extends Figure implements FigureCalculations{
     private double width;
     private double length;
     private double radiusOne;
@@ -56,10 +56,10 @@ public class Oval extends Figure{
                 radiusOne, radiusTwo);
     }
 
-    public double calculateAreaOval(){
+    public double calculateTheArea(){
         return Math.PI * radiusOne * radiusTwo;
     }
-    public double calculateLengthOval(){
+    public double calculatePerimeter(){
         return Math.PI * (radiusOne + radiusTwo);
     }
 
