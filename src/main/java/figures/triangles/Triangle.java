@@ -12,18 +12,15 @@ public class Triangle extends Figure implements FigureCalculations {
     private double sideOne;
     private double sideTwo;
     private double sideThree;
-    Triangle (double angleOne, double angleTwo, double angleThree){
-        if((angleOne + angleTwo + angleThree) > SUMofANGELS){
-            this.angleOne = angleOne;
-            this.angleTwo = angleTwo;
-            this.angleThree = angleThree;
-            super.setNameFigures("triangle");
-        }else{
-            System.out.println("The triangle does not exist.");
-        }
+
+    Triangle(double sideOne, double sideTwo, double sideThree) {
+        this.sideOne = sideOne;
+        this.sideTwo = sideTwo;
+        this.sideThree = sideThree;
+        super.setNameFigures("triangle");
     }
 
-   // Setter and Getter
+    // Setter and Getter
 
 
     public double getAngleOne() {
@@ -76,18 +73,18 @@ public class Triangle extends Figure implements FigureCalculations {
 
     // method
 
-    public void description(){
+    public void description() {
         super.description();
         System.out.printf("angle one: %f, angle two: %f, angle three: %f, side one: %f, side two: %f, side three: %f",
                 angleOne, angleTwo, angleThree, sideOne, sideTwo, sideThree);
     }
 
-    public double calculateTheArea(){
+    public double calculateTheArea() {
         double p = (sideOne + sideTwo + sideThree) / 2;
         return Math.sqrt(p * (p - sideOne) * (p - sideTwo) * (p - sideThree));
     }
 
-    public double calculatePerimeter(){
+    public double calculatePerimeter() {
         return sideOne + sideTwo + sideThree;
     }
 }

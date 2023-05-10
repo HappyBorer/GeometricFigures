@@ -12,23 +12,48 @@ public class Quadrilateral extends Figure {
     private double sideTwo;
     private double sideThree;
     private double sideFour;
+    private boolean lineCrossedSide;
+    private boolean circumscribe;
+    private boolean inscribeCircle;
+    Quadrilateral(){
+        super.setNameFigures("quadrilateral");
+    }
+    Quadrilateral(double sideOne, double sideTwo, double sideThree, double sideFour) {
 
-    Quadrilateral(double angleOne, double angleTwo, double angleThree, double angleFour){
-        if(checkingForExistence(angleOne, angleTwo, angleThree, angleFour)){
-            this.angleOne = angleOne;
-            this.angleTwo = angleTwo;
-            this.angleThree = angleThree;
-            this.angleFour = angleFour;
-            super.setNameFigures("quadrilateral");
-        }else{
-            System.out.println("The rectangle cannot exist");
-        }
+        this.sideOne = sideOne;
+        this.sideTwo = sideTwo;
+        this.sideThree = sideThree;
+        this.sideFour = sideFour;
+
     }
 
 
-
     // Setter and Getter
+    public boolean isInscribeCircle() {
+        return inscribeCircle;
+    }
 
+    public void setInscribeCircle(boolean inscribeCircle) {
+        this.inscribeCircle = inscribeCircle;
+    }
+
+    public boolean isCircumscribe() {
+        return circumscribe;
+    }
+
+    public void setCircumscribe(boolean circumscribe) {
+        this.circumscribe = circumscribe;
+    }
+    public double getSUMOfANGLES(){
+        return SUMOfANGLES;
+    }
+    public boolean isLineCrossedSide() {
+        return lineCrossedSide;
+    }
+
+    public void setLineCrossedSide(boolean lineCrossedSide) {
+        this.lineCrossedSide = lineCrossedSide;
+    }
 
     public double getSideOne() {
         return sideOne;
@@ -96,20 +121,11 @@ public class Quadrilateral extends Figure {
 
     // methods
 
-    private boolean checkingForExistence(double angleOne, double angleTwo, double angleThree, double angleFour){
-        if((angleOne + angleTwo + angleThree + angleFour) != SUMOfANGLES){
-            return false;
-        }
-        if(angleOne > (angleTwo + angleThree + angleFour) || angleTwo > (angleOne + angleThree + angleFour)
-                || angleThree > (angleOne + angleTwo + angleFour) || angleFour > (angleOne + angleTwo + angleThree)){
-            return false;
-        }
-        return true;
-    }
-    public void description(){
+
+    public void description() {
         super.description();
         System.out.printf("angel one: %f, angle two: %f, angle three: %f, angle four: %f, side one: %f, side two: %f,\n" +
-                "side three: %f, side four: %f", angleOne, angleTwo, angleThree, angleFour, sideOne, sideTwo, sideThree,
+                        "side three: %f, side four: %f", angleOne, angleTwo, angleThree, angleFour, sideOne, sideTwo, sideThree,
                 sideFour);
     }
 }
